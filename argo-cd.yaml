@@ -6,10 +6,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/amberin/argo-labb
-    path: charts/argocd
+    path: cluster-infra-apps/argo-cd
   destination:
     name: "in-cluster"
-    namespace: default
+    namespace: argo-cd
   syncPolicy:
     automated:
       prune: true
