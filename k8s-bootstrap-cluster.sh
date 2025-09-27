@@ -5,8 +5,7 @@
 helm repo add argo-cd https://argoproj.github.io/argo-helm
  
 # 1. Install Argo CD using Helm chart
-helm install argo-cd/argo-cd
-helm install argo-cd/argo-cd --generate-name
+helm install cluster-infra-apps/argo-cd
 
 # 2. Deploy cluster infra apps
 kubectl apply -f cluster-infra-apps.yaml
