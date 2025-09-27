@@ -8,4 +8,5 @@ helm repo add argo-cd https://argoproj.github.io/argo-helm
 helm install argo-cd/argo-cd
 helm install argo-cd/argo-cd --generate-name
 
-# 2. Deploy "app of apps"
+# 2. Deploy cluster infra apps
+kubectl apply -f cluster-infra-apps.yaml

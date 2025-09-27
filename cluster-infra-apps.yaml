@@ -11,7 +11,7 @@ spec:
           - path: cluster-infra-apps/*
   template:
     metadata:
-      name: 'cluster-infra-{{path.basename}}'
+      name: '{{path.basename}}'
     spec:
       project: default
       source:
@@ -24,3 +24,7 @@ spec:
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
+          enabled: true
