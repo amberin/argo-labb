@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-infra-apps
+spec:
+  generators:
+    - matrix:
+        generators:
+          - git:
+              repoURL: https://github.com/amberin/argo-labb
+              revision: HEAD
+              directories:
+                - path: cluster-infra-apps/*
+  template:
+    metadata:
+      name: 'cluster-infra-{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/amberin/argo-labb
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        name: in-cluster
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true

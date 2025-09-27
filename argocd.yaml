@@ -5,8 +5,8 @@ metadata:
 spec:
   project: default
   source:
-    chart: argo-cd
-    repoURL: https://argoproj.github.io/argo-helm
+    repoURL: https://github.com/amberin/argo-labb
+    path: charts/argocd
   destination:
     name: "in-cluster"
     namespace: default
