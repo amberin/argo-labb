@@ -7,4 +7,4 @@
 helm install cluster-infra-apps/argo-cd -n argo-cd --generate-name --create-namespace
 
 # 2. Deploy cluster infra apps
-kubectl apply -f cluster-infra-apps.yaml
+kubectl -n argo-cd apply -f cluster-infra-apps.yaml
