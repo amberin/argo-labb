@@ -11,3 +11,6 @@ kubectl -n argo-cd apply -f cluster-infra-apps.yaml
 
 # 3. Get Argo CD admin secret
 kubectl -n argo-cd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+# 4. Log into Argo CD and change admin password
+# 5. Try pushing a change to the app-of-apps repo
